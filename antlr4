@@ -1,2 +1,2 @@
 cd grammar
-java org.antlr.v4.Tool -o ../parser -no-listener -visitor Trekker.g4
+java org.antlr.v4.Tool -o ../parser/me/isaacjordan/Trekker/Generated -no-listener -visitor Trekker.g4
