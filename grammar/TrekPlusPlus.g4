@@ -1,6 +1,6 @@
-grammar Trekker;
+grammar TrekPlusPlus;
 
-@header {package me.isaacjordan.Trekker.Generated;}
+@header {package me.isaacjordan.TrekPlusPlus.Generated;}
 
 program
 	:	proc+  # prog
@@ -23,7 +23,7 @@ seq_com	:	command*;
 command	:	'example-command';
 
 // Numbers use KHAN notation. (A count is base, N count is mantissa)
-num_decl: ('KH' 'A'+ 'N'+);
+num_decl: 'KH' 'A'+ 'N'+;
 
 // Literals
 
