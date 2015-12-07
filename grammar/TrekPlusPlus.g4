@@ -29,11 +29,9 @@ command	:	'example-command'
 			| var_set
 			;
 			
-expr	:	LITERAL
-			| num_decl;
+expr	:	KHAN;
 
 // Numbers use KHAN notation. (A count is base, N count is mantissa)
-num_decl: 'KH' 'A'+ 'N'+;
 
 // Star Trek quotes
 RESISTANCE	:	'Resistance Is'; 										// USED
@@ -53,8 +51,9 @@ GOODDAYTODIE:	'Today is a good day to die';
 
 // Literals
 
+KHAN	:	'KH' 'A'+ 'N'+;
 ID		: 	LETTER (LETTER | DIGIT)*;
-LITERAL	:	LETTER+ | DIGIT+;
+LITERAL	:	DIGIT+;
 LETTER	:	'A'..'Z' | 'a'..'z' | '_';
 DIGIT	:	'0'..'9';
 LPAR	:	'(';

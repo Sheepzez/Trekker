@@ -1,1 +1,2 @@
-java org.antlr.v4.gui.TestRig -gui bin.me.isaacjordan.TrekPlusPlus.Generated.TrekkerParser program $*
+cd bin
+java org.antlr.v4.gui.TestRig me.isaacjordan.TrekPlusPlus.Generated.TrekPlusPlus program -gui ../$*
