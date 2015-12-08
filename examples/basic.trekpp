@@ -1,17 +1,18 @@
 To Boldly Go main 
-	example-command
-	example-command
-	example-command
 	Engage demo
-Beam Me Up, Scotty
+Beam Me Up
 
-function demo()
+Initialize Subroutine demo()
+	# Initialise two variables
 	Resistance Is my_var
 	Resistance Is my_other_var
 	
 	# Set my_var to 200
-	my_var Make It So KHAANN
+	Enter my_var KHAANN Make It So
 	
 	# Set my_other_var to 5000
-	my_other_var Make It So KHAAAAANNNN
+	Enter my_other_var KHAAAAANNNN Make It So
+	
+	# Return true
+	return Qapla
 Dismissed
