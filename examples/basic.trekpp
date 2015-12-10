@@ -8,11 +8,11 @@ Initialize Subroutine demo()
 	Resistance Is my_other_var
 	
 	# Set my_var to 200
-	Enter my_var KHAANN Make It So
+	my_var KHAANN Make It So
 	
 	# Set my_other_var to 5000
-	Enter my_other_var KHAAAAANNNN Make It So
+	my_other_var KHAAAAANNNN Make It So
 	
-	# Return true
-	return Qapla
+	# Return Qapla (True)
+	return my_var >= my_other_var
 Dismissed
