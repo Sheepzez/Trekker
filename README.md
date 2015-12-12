@@ -22,4 +22,4 @@ Suggested development environment is Eclipse with the [ANTLR4 IDE](https://githu
 
 * Main Developer - Isaac Jordan (Sheepzez)
 
-Special thanks to Prof. Simon Gay and David Watt from University of Glasgow for their Programming Languages course.
+Special thanks to Prof. Simon Gay and Prof. David Watt from University of Glasgow for their Programming Languages course.
