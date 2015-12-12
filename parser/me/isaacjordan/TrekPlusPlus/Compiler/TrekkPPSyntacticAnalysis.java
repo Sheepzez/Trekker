@@ -9,6 +9,12 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import me.isaacjordan.TrekPlusPlus.Generated.TrekPlusPlusLexer;
 import me.isaacjordan.TrekPlusPlus.Generated.TrekPlusPlusParser;
 
+/**
+ * Main class to start syntactic analysis of a Trek++ program.
+ * 
+ * @author Isaac Jordan (Sheepzez)
+ *
+ */
 public class TrekkPPSyntacticAnalysis {
 
 	private static boolean tracing = false;
@@ -16,10 +22,10 @@ public class TrekkPPSyntacticAnalysis {
 	public static void main(String[] args) {
 		try {
 			if (args.length == 0)
-				throw new TrekPlusPlusException("Error: No program file to parse given.");
+				throw new TrekPPException("Error: No program file to parse given.");
 			InputStream source = new FileInputStream(args[0]);
 			ParseTree ast = syntacticAnalyse(source);
-		} catch (TrekPlusPlusException ex) {
+		} catch (TrekPPException ex) {
 			System.out.println(ex.getMessage());
 		} catch (Exception ex) {
 			ex.printStackTrace(System.err);
@@ -35,7 +41,7 @@ public class TrekkPPSyntacticAnalysis {
 		int errors = parser.getNumberOfSyntaxErrors();
 		System.out.println(errors + " syntactic errors.");
 		if (errors > 0)
-			throw new TrekPlusPlusException("Compilation Failed.");
+			throw new TrekPPException("Compilation Failed.");
 		return ast;
 	}
 
