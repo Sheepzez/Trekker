@@ -5,6 +5,10 @@ A Star Trek quote-based programming lanuage. Inspired by ArnoldC. Aiming to comp
 ## Language Syntax
 Still under development...
 
+## To Do
+
+* Allow use of other JVM classes (Java, Scala...)
+
 ## Dependencies
 
 * ANTLR 4.5.1
