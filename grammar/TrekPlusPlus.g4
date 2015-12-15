@@ -65,6 +65,7 @@ SHIELDSUP	:	'Shields up! Red alert!';
 FOURLIGHTS	:	'There are four lights!';
 SHUTUP		:	'Shut up, Wesley!';
 ENTER		:	'Enter';
+REPORT		:	'Report';												// String input?
 
 
 // Literals

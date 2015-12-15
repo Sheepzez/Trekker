@@ -26,7 +26,7 @@ import me.isaacjordan.TrekPlusPlus.Generated.TrekPlusPlusVisitor;
 
 public class TrekPPEncoderVisitor extends AbstractParseTreeVisitor<Void> implements TrekPlusPlusVisitor<Void> {
 	
-	ClassWriter classWriter = new ClassWriter(0);
+	ClassWriter classWriter = new ClassWriter(ClassWriter.COMPUTE_MAXS);
 	public String programFileName;
 	MethodVisitor currentMethodVisitor;
 	
@@ -44,7 +44,8 @@ public class TrekPPEncoderVisitor extends AbstractParseTreeVisitor<Void> impleme
 	@Override
 	public Void visitFunc(FuncContext ctx) {
 		String funcName = ctx.func_decl().ID().getText();
-		currentMethodVisitor = classWriter.visitMethod(Opcodes.ACC_PUBLIC, funcName, "()", Type.getMethodDescriptor(Type.VOID_TYPE, Type.VOID_TYPE), null);
+		currentMethodVisitor = classWriter.visitMethod(Opcodes.ACC_PUBLIC, funcName, Type.getMethodDescriptor(Type.VOID_TYPE, new Type[0]), null, null);
+		currentMethodVisitor.visitInsn(Opcodes.RETURN);
 		return null;
 	}
 
@@ -67,7 +68,12 @@ public class TrekPPEncoderVisitor extends AbstractParseTreeVisitor<Void> impleme
 	@Override
 	public Void visitProc(ProcContext ctx) {
 		String procName = ctx.proc_decl().ID().getText();
-		currentMethodVisitor = classWriter.visitMethod(Opcodes.ACC_PUBLIC, procName, Type.getMethodDescriptor(Type.VOID_TYPE, Type.VOID_TYPE), null, null);
+		if (procName.toLowerCase().equals("main")) {
+			currentMethodVisitor = classWriter.visitMethod(Opcodes.ACC_PUBLIC + Opcodes.ACC_STATIC, procName, Type.getMethodDescriptor(Type.VOID_TYPE, Type.getType(String[].class)), null, null);
+		} else {
+			currentMethodVisitor = classWriter.visitMethod(Opcodes.ACC_PUBLIC, procName, Type.getMethodDescriptor(Type.VOID_TYPE, new Type[0]), null, null);
+		}
+		currentMethodVisitor.visitInsn(Opcodes.RETURN);
 		return null;
 	}
 
